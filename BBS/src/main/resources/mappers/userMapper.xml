@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.bbs.dao.UserDAO">
+  <select id="findUser" resultType="UserModel">
+    select * from user where username = #{username}
+  </select>
+  <select id="createUser" resultType="UserModel">
+    insert into user (email, username, pwd, address, city, country, postalcode, aboutme ) VALUES (#{email},#{username},#{pwd},#{address},#{city},#{country},#{postalCode},#{aboutMe});
+  </select>
+  <select id="updateUser" resultType="UserModel">
+    UPDATE user SET aboutme = #{aboutMe} WHERE userId= #{userId};
+  </select>
+</mapper>

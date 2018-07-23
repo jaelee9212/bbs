@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.bbs.dao.DashBoardDAO">
+  <select id="findUserById" resultType="DashBoardModel">
+    select catagory.catagoryName, dashboard.* from dashboard join catagory on catagory.catagory_id=dashboard.catagory_id where dashboard_id= #{dashboard_Id}
+  </select>
+  <select id="getAllContents" resultType="DashBoardModel">
+    select user.username, dashboard_id, title, content, countNum, catagory.catagoryName, dashboard.userid userid, createdTime, modifiedTime from dashboard join user on dashboard.userid = user.userid
+	join catagory on catagory.catagory_id=dashboard.catagory_id
+	order by dashboard_id asc;
+  </select>
+  <select id="newContent" resultType="DashBoardModel">
+   	insert into dashboard (title, content, catagory_id, userid) VALUES (#{title},#{content},#{catagoryid},#{userId});
+  </select>
+  <select id="updateContent" resultType="DashBoardModel">
+   	UPDATE dashboard SET content=#{content} WHERE dashboard_Id= #{dashboard_Id};
+  </select>
+  <select id="increaseCount" resultType="DashBoardModel">
+   	UPDATE dashboard SET countNum=countNum+1 WHERE dashboard_Id= #{dashboard_Id};
+  </select>
+  <select id="deleteContent" resultType="DashBoardModel">
+   	delete from dashboard WHERE dashboard_id= #{dashboard_Id};
+   </select>
+</mapper>
