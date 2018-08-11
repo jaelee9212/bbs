@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.bbs.dao.ParkDAO">
+  <resultMap id="parkResultMap" type="ParkModel">
+  	<result property="facilityId" column="result__facilityID" />
+  	<result property="facilityName" column="result__facilityName" />
+  	<result property="facilityPhoto" column="result__faciltyPhoto" />
+  	<result property="state" column="result__state" />
+  </resultMap>
+
+  <select id="fetchData" resultMap="parkResultMap">
+    select result__facilityID, result__facilityName, result__faciltyPhoto, result__state, count from park;
+  </select>
+</mapper>

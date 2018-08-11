@@ -31,9 +31,9 @@
                         </tr>
                       </thead>
                       <tbody>
-                      	<c:forEach var="dashboard" items="${dashboard}">
+                      	<c:forEach var="dashboard" items="${dashboard}" varStatus="dash">
                         <tr>
-                          <td>${dashboard.dashboard_Id}</td>
+                          <td>${dash.index + 1}</td>
                           <td><a href="/reply/${dashboard.dashboard_Id}">${dashboard.title}</a></td>
                           <td>${dashboard.catagoryName}</td>
                           <td>${dashboard.content}</td>

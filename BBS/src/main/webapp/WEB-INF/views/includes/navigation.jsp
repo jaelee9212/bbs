@@ -1,7 +1,7 @@
 <body class="">
 	<div class="wrapper">
 		<div class="sidebar" data-color="rose" data-background-color="black"
-			data-image="/resources/assets/img/sidebar-1.jpg">
+			data-image="/resources/assets/img/greenB.jpg">
 			<!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -15,7 +15,7 @@
 			<div class="sidebar-wrapper">
 				<div class="user">
 					<div class="photo">
-						<img src="/resources/assets/img/faces/avatar.jpg" />
+						<img src="/resources/assets/img/profile.jpg" />
 					</div>
 					<div class="user-info">
 						<a data-toggle="collapse" href="#collapseExample" class="username">
